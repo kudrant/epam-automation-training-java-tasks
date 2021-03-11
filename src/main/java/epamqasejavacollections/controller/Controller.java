@@ -41,9 +41,8 @@ public class Controller {
 
     private void menu() {
         view.printMenuItems();
-        String stringMenuItem = scanner.next();
         try { // My try to use this: https://www.javacodegeeks.com/2019/03/featured-enum-instead-switch.html
-            MenuItem menuItem = menuItemsMap.get(stringMenuItem.toUpperCase(Locale.ROOT));
+            MenuItem menuItem = menuItemsMap.get(scanner.next().toUpperCase(Locale.ROOT));
             menuItem.action();
         }catch (NullPointerException e) {
             menu();

@@ -6,7 +6,8 @@ import static epamqasejavacollections.controller.Controller.*;
 public enum MenuItem {
     ONE("1") {
         @Override public void action() {
-            view.showAircraft(airline.getAircraft(), "All aircraft of Airline");
+            view.showAircraft(airline.getAircraft(),
+                    "All aircraft of Airline");
         }
     },
     TWO("2") {
@@ -21,12 +22,14 @@ public enum MenuItem {
     },
     FOUR("4") {
         @Override public void action() {
-            view.showAircraft(airline.sortAircraftByFlightRange(), "Aircraft sorted by flight range");
+            view.showAircraft(airline.sortAircraftByFlightRange(),
+                    "Aircraft sorted by flight range");
         }
     },
     FIVE("5") {
         @Override public void action() {
-            view.showAircraft(airline.getAircraftByFuelConsumption(STARTFUELCONSUMPTION, ENDFUELCONSUMPTION), "Airplanes with 8.7-9.3 L/km fuel consumption" );
+            view.showAircraft(airline.getAircraftByFuelConsumption(STARTFUELCONSUMPTION, ENDFUELCONSUMPTION),
+                    "Airplanes with 8.7-9.3 L/km fuel consumption" );
         }
     },
     QUIT("Q") {

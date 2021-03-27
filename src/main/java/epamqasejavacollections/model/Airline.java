@@ -24,14 +24,14 @@ public class Airline {
         return sortedAircrafts;
     }
 
-    public int getTotalSeatings() {
-        int totalSeatings = 0;
+    public int getTotalSeating() {
+        int totalSeating = 0;
         for (Aircraft aircraft : aircraft
              ) {
             if (aircraft instanceof PassengerAircraft)
-                totalSeatings += ((PassengerAircraft) aircraft).getSeating();
+                totalSeating += ((PassengerAircraft) aircraft).getSeating();
         }
-        return totalSeatings;
+        return totalSeating;
     }
 
     public double getTotalCargoPayload() {

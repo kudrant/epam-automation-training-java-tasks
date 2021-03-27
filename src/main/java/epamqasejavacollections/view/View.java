@@ -31,7 +31,7 @@ public class View {
     }
 
     public void showTotalSeatings(Airline airline) {
-        System.out.println("Airline's total number of seating: " + airline.getTotalSeatings());
+        System.out.println("Airline's total number of seating: " + airline.getTotalSeating());
     }
 
     public void showTotalCargoPayload(Airline airline) {

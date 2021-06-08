@@ -33,8 +33,7 @@ public class CsvParser {
                         aircraft.add(new FreightAircraft(manufacturer, model, fuelCapacity, flightRange, cargoPayload));
                 }
             }
-        }
-        catch (IOException | CsvValidationException e) {
+        } catch (IOException | CsvValidationException e) {
             e.printStackTrace();
         }
 

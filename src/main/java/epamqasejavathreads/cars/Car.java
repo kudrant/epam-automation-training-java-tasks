@@ -5,7 +5,7 @@ import epamqasejavathreads.util.Helper;
 
 import java.util.concurrent.TimeUnit;
 
-public class Car implements Runnable{
+public class Car implements Runnable {
     private final int parkingTime;
     private long startParkingTime;
     private final long carArriveTime;

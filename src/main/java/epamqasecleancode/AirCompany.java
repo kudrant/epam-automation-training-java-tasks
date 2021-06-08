@@ -10,7 +10,7 @@ import java.util.List;
 import java.util.logging.Logger;
 
 public class AirCompany {
-    private static final Logger LOGGER = Logger.getLogger( AirCompany.class.getName() );
+    private static final Logger LOGGER = Logger.getLogger(AirCompany.class.getName());
     static List<Plane> planes = Arrays.asList(
             new PassengerPlane("Boeing-737", 900, 12000, 60500, 164),
             new PassengerPlane("Boeing-737-800", 940, 12300, 63870, 192),

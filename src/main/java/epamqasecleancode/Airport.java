@@ -48,7 +48,7 @@ public class Airport {
 
     public List<MilitaryPlane> getTransportMilitaryPlanes() {
         List<MilitaryPlane> transportMilitaryPlanes = new ArrayList<>();
-        for (Plane plane: planes) {
+        for (Plane plane : planes) {
             if (plane instanceof MilitaryPlane && ((MilitaryPlane) plane).getType() == MilitaryType.TRANSPORT)
                 transportMilitaryPlanes.add((MilitaryPlane) plane);
         }
@@ -57,7 +57,7 @@ public class Airport {
 
     public List<MilitaryPlane> getBomberMilitaryPlanes() {
         List<MilitaryPlane> bomberMilitaryPlanes = new ArrayList<>();
-        for (Plane plane: planes) {
+        for (Plane plane : planes) {
             if (plane instanceof MilitaryPlane && ((MilitaryPlane) plane).getType() == MilitaryType.BOMBER)
                 bomberMilitaryPlanes.add((MilitaryPlane) plane);
         }

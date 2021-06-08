@@ -2,7 +2,7 @@ package epamqasecleancode.planes;
 
 import java.util.Objects;
 
-public class PassengerPlane extends Plane{
+public class PassengerPlane extends Plane {
 
     private int passengersCapacity;
 
@@ -19,7 +19,7 @@ public class PassengerPlane extends Plane{
     public String toString() {
         return super.toString().replace("}",
                 ", passengersCapacity=" + passengersCapacity +
-                '}');
+                        '}');
     }
 
     @Override

@@ -1,5 +1,5 @@
 package epamqasejavaclasses;
 
-public enum  Faculty {
+public enum Faculty {
     CS, Biology, Economics, Mathematics
 }

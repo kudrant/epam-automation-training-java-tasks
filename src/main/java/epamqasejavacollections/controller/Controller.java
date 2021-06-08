@@ -18,7 +18,7 @@ public class Controller {
 
 
     public Controller() {
-        this.view = new View();
+        view = new View();
     }
 
     public void initController() {
@@ -44,7 +44,7 @@ public class Controller {
         try { // My try to use this: https://www.javacodegeeks.com/2019/03/featured-enum-instead-switch.html
             MenuItem menuItem = menuItemsMap.get(scanner.next().toUpperCase(Locale.ROOT));
             menuItem.action();
-        }catch (NullPointerException e) {
+        } catch (NullPointerException e) {
             menu();
         }
         menu();

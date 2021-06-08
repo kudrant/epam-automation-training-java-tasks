@@ -26,30 +26,30 @@ public class Airline {
 
     public int getTotalSeating() {
         int totalSeating = 0;
-        for (Aircraft aircraft : aircraft
-             ) {
-            if (aircraft instanceof PassengerAircraft)
-                totalSeating += ((PassengerAircraft) aircraft).getSeating();
+        for (Aircraft currentAircraft : aircraft
+        ) {
+            if (currentAircraft instanceof PassengerAircraft)
+                totalSeating += ((PassengerAircraft) currentAircraft).getSeating();
         }
         return totalSeating;
     }
 
     public double getTotalCargoPayload() {
         double totalCargoPayload = 0.0;
-        for (Aircraft aircraft : aircraft
-             ) {
-            if (aircraft instanceof FreightAircraft)
-                totalCargoPayload += aircraft.cargoPayload;
+        for (Aircraft currentAircraft : aircraft
+        ) {
+            if (currentAircraft instanceof FreightAircraft)
+                totalCargoPayload += currentAircraft.cargoPayload;
         }
         return totalCargoPayload;
     }
 
     public List<Aircraft> getAircraftByFuelConsumption(double startFuelConsumptionRange, double endFuelConsumptionRange) {
         List<Aircraft> aircraftByFuelConsumption = new ArrayList<>();
-        for (Aircraft aircraft : aircraft
-             ) {
-            if (aircraft.getFuelConsumption() > startFuelConsumptionRange && aircraft.getFuelConsumption()<endFuelConsumptionRange)
-                aircraftByFuelConsumption.add(aircraft);
+        for (Aircraft currentAircraft : aircraft
+        ) {
+            if (currentAircraft.getFuelConsumption() > startFuelConsumptionRange && currentAircraft.getFuelConsumption() < endFuelConsumptionRange)
+                aircraftByFuelConsumption.add(currentAircraft);
         }
         return aircraftByFuelConsumption;
     }

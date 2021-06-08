@@ -17,7 +17,7 @@ public class ParkingRunner {
                 (ThreadPoolExecutor) Executors.newFixedThreadPool(NUMBER_OF_PARKING_PLACES);
         CarGenerator carGenerator = new CarGenerator(parking, NUMBER_OF_CARS);
         carGenerator.generateCars();
-        Thread parkingQueue = new Thread( new ParkingQueue(parking));
+        Thread parkingQueue = new Thread(new ParkingQueue(parking));
         parkingQueue.setDaemon(true);
         parkingQueue.start();
         parking.shutdown();

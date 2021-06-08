@@ -10,13 +10,11 @@ import java.util.Locale;
 /**
  * EPAM QA SE course Java Classes Main task
  */
-public class University
-{
+public class University {
     static List<Student> students = new ArrayList<>();
     static SimpleDateFormat format = new SimpleDateFormat("dd.MM.yyyy", Locale.ENGLISH);
 
-    public static void main( String[] args )
-    {
+    public static void main(String[] args) {
         University university = new University();
         university.initializeStudents();
         university.showStudentsByFacultySpecified(Faculty.CS);
@@ -48,14 +46,14 @@ public class University
             students.add(new Student(7, "Bush", "George", "Jr",
                     format.parse("06.07.1946"), "2, Texas str", "5559999999", Faculty.Mathematics, 5, 11));
 
-        }catch (ParseException e) {
+        } catch (ParseException e) {
             e.printStackTrace();
         }
     }
 
     private void showStudentsByFacultySpecified(Faculty faculty) {
         for (Student student : students
-             ) {
+        ) {
             if (student.getFaculty().equals(faculty))
                 Helper.printMessage(student.toString());
         }
@@ -89,8 +87,8 @@ public class University
                 courseList.add(course);
         }
 
-        for (Integer course: courseList
-             ) {
+        for (Integer course : courseList
+        ) {
             Helper.printMessage("Students of course No " + course);
             for (Student student : students
             ) {
@@ -104,7 +102,7 @@ public class University
         Date date;
         try {
             date = format.parse("31.12." + year);
-            for (Student student: students
+            for (Student student : students
             ) {
                 if (student.getBirthDate().after(date))
                     Helper.printMessage(student.toString());

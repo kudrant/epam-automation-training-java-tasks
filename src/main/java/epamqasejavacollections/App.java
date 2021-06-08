@@ -9,10 +9,8 @@ import epamqasejavacollections.controller.Controller;
  * Sort the company's aircraft by flight range.
  * Find an aircraft in the company that matches a given range of fuel consumption.
  */
-public class App 
-{
-    public static void main( String[] args )
-    {
+public class App {
+    public static void main(String[] args) {
         Controller controller = new Controller();
         controller.initController();
     }

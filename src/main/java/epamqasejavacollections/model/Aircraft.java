@@ -1,13 +1,13 @@
 package epamqasejavacollections.model;
 
-public abstract class Aircraft implements Comparable<Aircraft>{
+public abstract class Aircraft implements Comparable<Aircraft> {
     protected final String manufacturer;
     protected final String model;
     protected final double fuelCapacity;
-    protected  final double flightRange;
-    protected final double cargoPayload;
+    protected final double flightRange;
+    protected final Double cargoPayload;
 
-    public Aircraft(String manufacturer, String model, double fuelCapacity, double flightRange, double cargoPayload) {
+    protected Aircraft(String manufacturer, String model, double fuelCapacity, double flightRange, double cargoPayload) {
         this.manufacturer = manufacturer;
         this.model = model;
         this.fuelCapacity = fuelCapacity;
@@ -21,8 +21,7 @@ public abstract class Aircraft implements Comparable<Aircraft>{
 
     @Override
     public int compareTo(Aircraft a) {
-        return (int)(this.flightRange - a.flightRange);
+        return (int) (this.flightRange - a.flightRange);
     }
-
 
 }

@@ -6,7 +6,7 @@ import java.util.Random;
 import java.util.concurrent.ThreadPoolExecutor;
 import java.util.concurrent.TimeUnit;
 
-public class CarGenerator{
+public class CarGenerator {
     private final ThreadPoolExecutor parking;
     private final int carCount;
 
@@ -35,7 +35,6 @@ public class CarGenerator{
     private int getRandomMaxWaitingTime() {
         return new Random().nextInt(4) + 1;
     }
-
 
 
 }

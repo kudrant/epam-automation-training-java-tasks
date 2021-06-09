@@ -9,7 +9,7 @@ import java.util.Locale;
 import java.util.Map;
 
 public class Student {
-    private int id;
+    private final int id;
     private final String lastName;
     private final String name;
     private final Date birthDate;
@@ -33,20 +33,8 @@ public class Student {
         this.grades = grades;
     }
 
-    public Map<Subject, Double> getGrades() {
-        return grades;
-    }
-
-    public Date getBirthDate() {
-        return birthDate;
-    }
-
     public Faculty getFaculty() {
         return faculty;
-    }
-
-    public int getCourse() {
-        return course;
     }
 
     public int getGroup() {
@@ -75,7 +63,8 @@ public class Student {
     @Override
     public String toString() {
         SimpleDateFormat format = new SimpleDateFormat("dd.MM.yyyy", Locale.ENGLISH);
-        return "Student " + lastName + " " + name +
+        return "Student #" + id +
+                ", Name = " + lastName + " " + name +
                 ", Date of birth = " + format.format(birthDate) +
                 ", Faculty = " + faculty +
                 ", Course = " + course +

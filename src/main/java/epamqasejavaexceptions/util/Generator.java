@@ -10,10 +10,11 @@ import java.util.*;
 public class Generator {
     private static Random random = new Random();
 
+    private Generator() {
+    }
+
     public static List<Student> generateStudents(int quantity) {
         ArrayList<Student> generatedStudents = new ArrayList<>();
-
-        int id;
         String lastName;
         String name;
         Date birthDate;
@@ -31,8 +32,7 @@ public class Generator {
             birthDate = faker.date().birthday();
             address = faker.address().fullAddress();
             phoneNo = faker.phoneNumber().phoneNumber();
-            int facultyIndex = random.nextInt(4);
-            faculty = Faculty.values()[facultyIndex];
+            faculty = Faculty.values()[random.nextInt(4)];
             course = random.nextInt(4) + 1;
             group = getGroupNumber();
 

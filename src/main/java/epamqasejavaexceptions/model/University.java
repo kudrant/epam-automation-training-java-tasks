@@ -11,18 +11,18 @@ import java.util.List;
  * EPAM QA SE course Java Exceptions Main task
  * <p>
  * В университете есть несколько факультетов, в которых учатся студенты, объединенные в группы. У каждого студента есть несколько учебных предметов по которым он получает оценки. Необходимо реализовать иерархию студентов, групп и факультетов.
- *
- *     Посчитать средний балл по всем предметам студента
- *     Посчитать средний балл по конкретному предмету в конкретной группе и на конкретном факультете
- *     Посчитать средний балл по предмету для всего университета
- *<p>
+ * <p>
+ * Посчитать средний балл по всем предметам студента
+ * Посчитать средний балл по конкретному предмету в конкретной группе и на конкретном факультете
+ * Посчитать средний балл по предмету для всего университета
+ * <p>
  * Реализовать следующие исключения:
- *<p>
- *     Оценка ниже 0 или выше 10
- *     Отсутствие предметов у студента (должен быть хотя бы один)
- *     Отсутствие студентов в группе
- *     Отсутствие групп на факультете
- *     Отсутствие факультетов в университете
+ * <p>
+ * Оценка ниже 0 или выше 10
+ * Отсутствие предметов у студента (должен быть хотя бы один)
+ * Отсутствие студентов в группе
+ * Отсутствие групп на факультете
+ * Отсутствие факультетов в университете
  *
  *
  *
@@ -51,24 +51,25 @@ public class University {
 
     public void showAverageScoreBySubjectGroupFaculty(Faculty faculty, int group, Subject subject) throws EmptyStudyGroupException {
         int counter = 0;
-        double result = 0.0;
+        double scoreSum = 0.0;
         for (Student student : students
         ) {
             if (student.getFaculty() == faculty && student.getGroup() == group) {
                 try {
-                    result += student.getScoreBySubject(subject);
+                    scoreSum += student.getScoreBySubject(subject);
                     counter++;
                 } catch (IncorrectScoreException e) {
                     e.printStackTrace();
                 }
             }
         }
+        double result = Helper.getNormalizedAverage(scoreSum, counter);
         if (result <= 0.0 || result > 10.0)
-            throw new EmptyStudyGroupException();
+            throw new EmptyStudyGroupException("Result = " + result);
         Helper.printMessage("Average Score for " +
                 subject + " subject " +
                 "in group # " + group +
-                " at " + faculty + " faculty = " + Helper.getNormalizedAverage(result, counter));
+                " at " + faculty + " faculty = " + result);
     }
 
     public void showAverageScoreBySubjectInUniversity(Subject subject) {
@@ -79,7 +80,8 @@ public class University {
             try {
                 result += student.getScoreBySubject(subject);
                 counter++;
-            } catch (IncorrectScoreException ignored) {
+            } catch (IncorrectScoreException e) {
+                e.printStackTrace();
             }
         }
         Helper.printMessage("Average Score for " +
@@ -98,5 +100,4 @@ public class University {
             }
         }
     }
-
 }
